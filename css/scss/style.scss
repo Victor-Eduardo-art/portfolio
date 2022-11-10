@@ -268,6 +268,10 @@ header {
     animation-name: 'delay-opacity';
     animation-duration: 3s;
 
+    img {
+        height: 3rem;
+    }
+
     nav {
         a {
             color: $cor-branca;
@@ -390,8 +394,8 @@ main {
                 margin: 1.5rem 0;
                 display: flex;
                 background-color: $cor-preta-claro;
-                border-radius: 5px;
-                padding: 5px;
+                border-radius: 0.5rem;
+                padding: 0.5rem;
                 align-items: center;
                 transition: 0.5s width;
                 width: 5rem;
@@ -563,8 +567,8 @@ main {
                     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
                     
                     span {
-                        text-align: center;
                         margin: 0.5rem 1.5rem;
+                        text-align: center;
                     }
                 }
             }
@@ -593,6 +597,20 @@ footer {
             width: 100% !important;
         }
     }
+
+    .habilidade {
+        flex-direction: column;
+        height: auto !important;
+
+        .esquerda {
+            width: 100% !important;
+            margin-bottom: 3rem;
+        }
+
+        .direita {
+            width: 100% !important;
+        }
+    }
 }
 
 @media (max-width: 792px)  {
@@ -608,23 +626,18 @@ footer {
 
     header {
         nav {
-            transition: 2s all;
+            transition: 1s all;
             opacity: 0%;
-            display: none;
-        }
-
-        .menu_mobile {
-            position: absolute;
-            top: 0;
-            right: 0;
+            display: flex;
             height: 100vh;
-            width: 50vw;
-            background-color: $cor-preta-claro;
-            display: flex !important;
-            opacity: 100%;
+            width: 0;
+            position: absolute;
             flex-direction: column;
             align-items: center;
-            padding: 3rem 0;
+            padding: 5rem 0;
+            background-color: #3d3d3de0;
+            top: 0;
+            right: 0;
 
             a {
                 font-size: 3rem;
@@ -636,6 +649,12 @@ footer {
                 padding: 0;
                 color: $cor-primaria-forte;
             }
+        }
+        
+        .menu_mobile {
+            width: 50vw;
+            opacity: 100%;
+
         }
 
         .btn-menu {
@@ -728,5 +747,63 @@ footer {
 
     .fixo {
         overflow: hidden !important;
+    }
+}
+
+@media (max-width: 550px) {
+    :root {
+        font-size: 41%;
+    }
+
+    div.main {
+        section {
+            p {
+                width: 100% !important;
+            }
+        }
+    }
+
+    .habilidade {
+        .direita {
+            width: 100% !important;
+
+            ul {
+                grid-template-columns: 1fr 1fr 1fr 1fr !important;
+            }
+        }
+    }
+
+    header {
+        .btn-menu {
+            .icone.off {
+                #obj-1 {
+                    animation-name:  'anima_btn_off-obj-1';
+                }
+            }            
+        }
+    }
+}
+
+@media (max-width: 330px) {
+    :root {
+        font-size: 35%;
+    }
+
+    .habilidade {
+        .direita {
+            ul {
+                grid-template-columns: 1fr 1fr 1fr !important;
+            }
+        }
+    }
+
+    header {
+        .btn-menu {
+            .icone.off {
+                #obj-1 {
+                    animation-name:  'anima_btn_off-obj-1';
+                }
+            }            
+        }
     }
 }

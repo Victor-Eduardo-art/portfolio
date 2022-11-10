@@ -278,6 +278,9 @@ header {
   -webkit-animation-duration: 3s;
           animation-duration: 3s;
 }
+header img {
+  height: 3rem;
+}
 header nav a {
   color: #fff;
   margin: 0 3rem;
@@ -382,8 +385,8 @@ main div.main nav a {
   margin: 1.5rem 0;
   display: flex;
   background-color: #404040;
-  border-radius: 5px;
-  padding: 5px;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
   align-items: center;
   transition: 0.5s width;
   width: 5rem;
@@ -527,8 +530,8 @@ main .ctr-habilidades .habilidade .direita ul {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 main .ctr-habilidades .habilidade .direita ul span {
-  text-align: center;
   margin: 0.5rem 1.5rem;
+  text-align: center;
 }
 
 /* ====== FOOTER ====== */
@@ -549,6 +552,17 @@ footer {
   .ctr-projetos .projeto {
     width: 100% !important;
   }
+  .habilidade {
+    flex-direction: column;
+    height: auto !important;
+  }
+  .habilidade .esquerda {
+    width: 100% !important;
+    margin-bottom: 3rem;
+  }
+  .habilidade .direita {
+    width: 100% !important;
+  }
 }
 @media (max-width: 792px) {
   :root {
@@ -558,31 +572,31 @@ footer {
     top: 12rem !important;
   }
   header nav {
-    transition: 2s all;
+    transition: 1s all;
     opacity: 0%;
-    display: none;
-  }
-  header .menu_mobile {
-    position: absolute;
-    top: 0;
-    right: 0;
+    display: flex;
     height: 100vh;
-    width: 50vw;
-    background-color: #404040;
-    display: flex !important;
-    opacity: 100%;
+    width: 0;
+    position: absolute;
     flex-direction: column;
     align-items: center;
-    padding: 3rem 0;
+    padding: 5rem 0;
+    background-color: rgba(61, 61, 61, 0.8784313725);
+    top: 0;
+    right: 0;
   }
-  header .menu_mobile a {
+  header nav a {
     font-size: 3rem;
     margin: 2rem 0;
   }
-  header .menu_mobile .destaque {
+  header nav .destaque {
     border: none;
     padding: 0;
     color: #5D04D9;
+  }
+  header .menu_mobile {
+    width: 50vw;
+    opacity: 100%;
   }
   header .btn-menu {
     z-index: 99;
@@ -665,5 +679,35 @@ footer {
   }
   .fixo {
     overflow: hidden !important;
+  }
+}
+@media (max-width: 550px) {
+  :root {
+    font-size: 41%;
+  }
+  div.main section p {
+    width: 100% !important;
+  }
+  .habilidade .direita {
+    width: 100% !important;
+  }
+  .habilidade .direita ul {
+    grid-template-columns: 1fr 1fr 1fr 1fr !important;
+  }
+  header .btn-menu .icone.off #obj-1 {
+    -webkit-animation-name: "anima_btn_off-obj-1";
+            animation-name: "anima_btn_off-obj-1";
+  }
+}
+@media (max-width: 330px) {
+  :root {
+    font-size: 35%;
+  }
+  .habilidade .direita ul {
+    grid-template-columns: 1fr 1fr 1fr !important;
+  }
+  header .btn-menu .icone.off #obj-1 {
+    -webkit-animation-name: "anima_btn_off-obj-1";
+            animation-name: "anima_btn_off-obj-1";
   }
 }/*# sourceMappingURL=style.css.map */
