@@ -1,29 +1,20 @@
-        <!-- <div class="ctr-secoes" id="secao-1">
           <div class="secao">
             <a href="#" class="projeto">
+              <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil magni consequuntur, et dolorem, autem doloremque quibusdam hic odit, ex quaerat delectus praesentium. Deserunt optio, voluptates necessitatibus eveniet esse illum? Modi.</span>
               <div class="screenshot"><img src="images/pf1.jpg" alt="screenshot do projeto"></div>
-    
-              <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur dolor ducimus, fuga id perferendis sint ut distinctio omnis quo natus earum vel iure cupiditate provident ullam similique autem eligendi? Quis! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto illum deleniti maiores.</span>
             </a>
-    
             <a href="#" class="projeto">
-              <div class="screenshot"><img src="#" alt="screenshot do projeto"></div>
-    
-              <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur dolor ducimus, fuga id perferendis sint ut distinctio omnis quo natus earum vel iure cupiditate provident ullam similique autem eligendi? Quis!</span>
+              <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil magni consequuntur, et dolorem, autem doloremque quibusdam hic odit, ex quaerat delectus praesentium. Deserunt optio, voluptates necessitatibus eveniet esse illum? Modi.</span>
+              <div class="screenshot"><img src="images/pf1.jpg" alt="screenshot do projeto"></div>
             </a>
           </div>
-  
           <div class="secao">
             <a href="#" class="projeto">
-              <div class="screenshot"><img src="#" alt="screenshot do projeto"></div>
-    
-              <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur dolor ducimus, fuga id perferendis sint ut distinctio omnis quo natus earum vel iure cupiditate provident ullam similique autem eligendi? Quis!</span>
+              <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil magni consequuntur, et dolorem, autem doloremque quibusdam hic odit, ex quaerat delectus praesentium. Deserunt optio, voluptates necessitatibus eveniet esse illum? Modi.</span>
+              <div class="screenshot"><img src="images/pf1.jpg" alt="screenshot do projeto"></div>
             </a>
-    
             <a href="#" class="projeto">
-              <div class="screenshot"><img src="#" alt="screenshot do projeto"></div>
-    
-              <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur dolor ducimus, fuga id perferendis sint ut distinctio omnis quo natus earum vel iure cupiditate provident ullam similique autem eligendi? Quis!</span>
+              <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil magni consequuntur, et dolorem, autem doloremque quibusdam hic odit, ex quaerat delectus praesentium. Deserunt optio, voluptates necessitatibus eveniet esse illum? Modi.</span>
+              <div class="screenshot"><img src="images/pf1.jpg" alt="screenshot do projeto"></div>
             </a>
           </div>
-        </div> -->
