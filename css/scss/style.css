@@ -4,11 +4,11 @@
 /* ====== BODY/HTML/ROOT ====== */
 :root {
   font-size: 65%;
-  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
 body {
+  overflow-x: hidden;
   -webkit-animation-name: "delay-opacity";
           animation-name: "delay-opacity";
   -webkit-animation-duration: 1s;
@@ -157,6 +157,110 @@ label {
     opacity: 100%;
   }
 }
+@-webkit-keyframes anima_btn_off-obj-1 {
+  0% {
+    transform: translate(0, 0);
+    opacity: 100%;
+  }
+  100% {
+    transform: translate(10rem, 0);
+    opacity: 0%;
+  }
+}
+@keyframes anima_btn_off-obj-1 {
+  0% {
+    transform: translate(0, 0);
+    opacity: 100%;
+  }
+  100% {
+    transform: translate(10rem, 0);
+    opacity: 0%;
+  }
+}
+@-webkit-keyframes anima_btn_off-obj-2 {
+  0% {
+    transform: rotate(0) translate(0, 0);
+  }
+  100% {
+    transform: rotate(45deg) translate(0.5rem, 0.5rem);
+  }
+}
+@keyframes anima_btn_off-obj-2 {
+  0% {
+    transform: rotate(0) translate(0, 0);
+  }
+  100% {
+    transform: rotate(45deg) translate(0.5rem, 0.5rem);
+  }
+}
+@-webkit-keyframes anima_btn_off-obj-3 {
+  0% {
+    transform: rotate(0) translate(0, 0);
+  }
+  100% {
+    transform: rotate(-45deg) translate(0.6rem, -0.5rem);
+  }
+}
+@keyframes anima_btn_off-obj-3 {
+  0% {
+    transform: rotate(0) translate(0, 0);
+  }
+  100% {
+    transform: rotate(-45deg) translate(0.6rem, -0.5rem);
+  }
+}
+@-webkit-keyframes anima_btn_on-obj-1 {
+  0% {
+    transform: translate(10rem, 0);
+    opacity: 0%;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 100%;
+  }
+}
+@keyframes anima_btn_on-obj-1 {
+  0% {
+    transform: translate(10rem, 0);
+    opacity: 0%;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 100%;
+  }
+}
+@-webkit-keyframes anima_btn_on-obj-2 {
+  0% {
+    transform: rotate(45deg) translate(0.5rem, 0.5rem);
+  }
+  100% {
+    transform: rotate(0) translate(0, 0);
+  }
+}
+@keyframes anima_btn_on-obj-2 {
+  0% {
+    transform: rotate(45deg) translate(0.5rem, 0.5rem);
+  }
+  100% {
+    transform: rotate(0) translate(0, 0);
+  }
+}
+@-webkit-keyframes anima_btn_on-obj-3 {
+  0% {
+    transform: rotate(-45deg) translate(0.6rem, -0.5rem);
+  }
+  100% {
+    transform: rotate(0) translate(0, 0);
+  }
+}
+@keyframes anima_btn_on-obj-3 {
+  0% {
+    transform: rotate(-45deg) translate(0.6rem, -0.5rem);
+  }
+  100% {
+    transform: rotate(0) translate(0, 0);
+  }
+}
 /* ====== HEADER ====== */
 header {
   z-index: 99;
@@ -174,15 +278,15 @@ header {
   -webkit-animation-duration: 3s;
           animation-duration: 3s;
 }
-header a {
+header nav a {
   color: #fff;
   margin: 0 3rem;
 }
-header .destaque {
+header nav .destaque {
   border-bottom: 1px solid #5C0396;
   padding-bottom: 0.5rem;
 }
-header a:hover {
+header nav a:hover {
   transition: 0.5s all;
   color: #893FF1;
 }
@@ -259,6 +363,8 @@ main div.main section {
 }
 main div.main section .foto {
   margin-bottom: 6rem;
+  width: 20rem;
+  height: 20rem;
 }
 main div.main section p {
   width: 60rem;
@@ -270,7 +376,7 @@ main div.main nav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 10vw;
+  width: 18rem;
 }
 main div.main nav a {
   margin: 1.5rem 0;
@@ -280,7 +386,7 @@ main div.main nav a {
   padding: 5px;
   align-items: center;
   transition: 0.5s width;
-  width: 27%;
+  width: 5rem;
 }
 main div.main nav a button {
   color: #fff;
@@ -302,43 +408,35 @@ main div.main nav a:hover button {
 main .ctr-projetos {
   width: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
   height: 48rem;
   overflow: hidden;
 }
-main .ctr-projetos .ctr-secoes {
-  width: 100%;
-  height: 100%;
-}
-main .ctr-projetos .ctr-secoes .secao {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-main .ctr-projetos .ctr-secoes .secao .projeto {
+main .ctr-projetos .projeto {
   color: #fff;
   transition: 0.5s all;
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 47%;
+  width: 48%;
   height: 21rem;
   border-radius: 15px;
   background-color: rgba(38, 38, 38, 0.6980392157);
   padding: 5px;
   margin: 1.5rem 0;
   box-shadow: 1px 0px 5px #1C1C1C;
-}
-main .ctr-projetos .ctr-secoes .secao .projeto:nth-child(odd) .screenshot {
-  order: 1;
-}
-main .ctr-projetos .ctr-secoes .secao .projeto:nth-child(odd) span {
   text-align: right;
+}
+main .ctr-projetos .projeto:nth-child(even) .screenshot {
+  order: -1;
+}
+main .ctr-projetos .projeto:nth-child(even) span {
+  text-align: left;
   margin: 0 2.5rem;
 }
-main .ctr-projetos .ctr-secoes .secao .projeto .screenshot {
+main .ctr-projetos .projeto .screenshot {
   width: 25rem;
   background-color: #3d3d3d;
   font-size: 1.5rem;
@@ -348,19 +446,19 @@ main .ctr-projetos .ctr-secoes .secao .projeto .screenshot {
   align-items: center;
   justify-content: center;
 }
-main .ctr-projetos .ctr-secoes .secao .projeto .screenshot img {
+main .ctr-projetos .projeto .screenshot img {
   width: auto;
   height: 100%;
 }
-main .ctr-projetos .ctr-secoes .secao .projeto span {
-  margin-left: 2.5rem;
+main .ctr-projetos .projeto span {
+  margin-right: 2.5rem;
   display: flex;
   align-items: center;
   width: 70%;
   height: 70%;
   overflow: hidden;
 }
-main .ctr-projetos .ctr-secoes .secao .projeto:hover {
+main .ctr-projetos .projeto:hover {
   background-color: #262626;
   transform: scale(1.05);
 }
@@ -439,4 +537,133 @@ footer {
   background-color: #262626;
   text-align: center;
   padding: 1.5rem 0;
+  margin-top: 5rem;
+}
+
+/* ====== media query ====== */
+@media (max-width: 1050px) {
+  .ctr-projetos {
+    flex-direction: column !important;
+    height: 96rem !important;
+  }
+  .ctr-projetos .projeto {
+    width: 100% !important;
+  }
+}
+@media (max-width: 792px) {
+  :root {
+    font-size: 55%;
+  }
+  div.main nav {
+    top: 12rem !important;
+  }
+  header nav {
+    transition: 2s all;
+    opacity: 0%;
+    display: none;
+  }
+  header .menu_mobile {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 50vw;
+    background-color: #404040;
+    display: flex !important;
+    opacity: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 0;
+  }
+  header .menu_mobile a {
+    font-size: 3rem;
+    margin: 2rem 0;
+  }
+  header .menu_mobile .destaque {
+    border: none;
+    padding: 0;
+    color: #5D04D9;
+  }
+  header .btn-menu {
+    z-index: 99;
+    width: 3rem;
+    height: 3rem;
+    background-color: #262626;
+    transition: 0.5s all;
+  }
+  header .btn-menu .icone.on {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  header .btn-menu .icone.on .objeto {
+    width: 3rem;
+    height: 0.5rem;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+  }
+  header .btn-menu .icone.on #obj-1 {
+    -webkit-animation-name: "anima_btn_on-obj-1";
+            animation-name: "anima_btn_on-obj-1";
+  }
+  header .btn-menu .icone.on #obj-2 {
+    -webkit-animation-name: "anima_btn_on-obj-2";
+            animation-name: "anima_btn_on-obj-2";
+  }
+  header .btn-menu .icone.on #obj-3 {
+    -webkit-animation-name: "anima_btn_on-obj-3";
+            animation-name: "anima_btn_on-obj-3";
+  }
+  header .btn-menu .icone.off {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  header .btn-menu .icone.off .objeto {
+    width: 3rem;
+    height: 0.5rem;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+  }
+  header .btn-menu .icone.off #obj-1 {
+    position: absolute;
+    top: 1.5rem;
+    opacity: 0%;
+    -webkit-animation-name: "anima_btn_off-obj-1";
+            animation-name: "anima_btn_off-obj-1";
+  }
+  header .btn-menu .icone.off #obj-2 {
+    -webkit-animation-name: "anima_btn_off-obj-2";
+            animation-name: "anima_btn_off-obj-2";
+    transform: rotate(45deg) translate(0.5rem, 0.5rem);
+  }
+  header .btn-menu .icone.off #obj-3 {
+    -webkit-animation-name: "anima_btn_off-obj-3";
+            animation-name: "anima_btn_off-obj-3";
+    transform: rotate(-45deg) translate(0.7rem, -0.5rem);
+  }
+  header .btn-menu:hover {
+    cursor: pointer;
+    opacity: 80%;
+  }
+  .fundo_blur {
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: #111;
+    opacity: 60%;
+    width: 100vw;
+    height: 100vh;
+  }
+  .fixo {
+    overflow: hidden !important;
+  }
 }/*# sourceMappingURL=style.css.map */
