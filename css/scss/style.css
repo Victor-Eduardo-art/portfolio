@@ -5,6 +5,7 @@
 :root {
   font-size: 65%;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -24,12 +25,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #5C0396;
+  background-color: #383838;
   border-radius: 10%;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #1C1C1C;
+  background-color: #2b2b2b;
 }
 
 /* ====== VARIÁVEIS ====== */
@@ -261,6 +262,11 @@ label {
     transform: rotate(0) translate(0, 0);
   }
 }
+/* ====== CLASS ESPECIAIS ====== */
+.fixo {
+  overflow: hidden !important;
+}
+
 /* ====== HEADER ====== */
 header {
   z-index: 99;
@@ -300,7 +306,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 88vh;
+  min-height: 95vh;
 }
 main .foto {
   width: 23rem;
@@ -470,6 +476,7 @@ main .ctr-botoes {
   display: flex;
   justify-content: center;
   margin-top: 2rem;
+  margin-bottom: 5rem;
 }
 main .ctr-botoes a {
   transition: 0.5s all;
@@ -536,15 +543,24 @@ main .ctr-habilidades .habilidade .direita ul span {
 
 /* ====== FOOTER ====== */
 footer {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0vh;
+  left: 0;
   width: 100%;
+  height: 5vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   background-color: #262626;
-  text-align: center;
-  padding: 1.5rem 0;
-  margin-top: 5rem;
+}
+footer span {
+  font-size: 2rem;
 }
 
 /* ====== media query ====== */
-@media (max-width: 1050px) {
+@media (max-width: 1350px) {
   .ctr-projetos {
     flex-direction: column !important;
     height: 96rem !important;
@@ -572,9 +588,9 @@ footer {
     top: 12rem !important;
   }
   header nav {
+    display: flex;
     transition: 1s all;
     opacity: 0%;
-    display: flex;
     height: 100vh;
     width: 0;
     position: absolute;
@@ -676,9 +692,6 @@ footer {
     opacity: 60%;
     width: 100vw;
     height: 100vh;
-  }
-  .fixo {
-    overflow: hidden !important;
   }
 }
 @media (max-width: 550px) {
