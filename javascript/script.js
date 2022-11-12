@@ -17,78 +17,91 @@ function configMenu () {
     })
 }
 
-function getProjects (api_propria) {
-    if (api_propria[0] != true) {
-        fetch('https://api.github.com/users/Victor-Eduardo-art/repos')
-        // E-commerce-product-page
-        .then((res) => {
-            if (res.status == 200) {
-                console.log('API OK')
+function getProjects () {
+    fetch('https://api-dos-projetos-github.victor-eduardo.repl.co')
+    .then((res) => {
+        return res.json()
+    }).then((res) => {
+        for (let i = 0; i < res.length; i++) {
+            fetch(res[i])
+            .then((repo) => {
+                if (repo.status == 200) {            
+                    return repo.json()
+                } else {
+                    console.log(`API ERRO, Código do erro: ${repo.status}`)
+                }
+            }).then((repo) => {
+                const projetos = document.querySelectorAll('.projeto')
+                const root = document.querySelector('.ctr-projetos')
     
-                return res.json()
-            } else {
-                console.log(`API ERRO, Código do erro: ${res.status}`)
-            }
-        }).then((res) => {
-            const root = document.querySelector('.ctr-projetos')
+                let descricao = repo.description
+                let nome = repo.name
+                let screenshot = null
+                let url = repo.html_url
+    
+                screenshot = `https://raw.githubusercontent.com/Victor-Eduardo-art/${nome}/master/screenshots/screenshot.png`
+                
+                const projeto = document.createElement('a')
+                const span = document.createElement('span')
+                const ctr_foto = document.createElement('div')
+                const foto = document.createElement('img')
+                
+                projeto.href = url
+                span.innerHTML = descricao   
+                foto.src = screenshot
+                foto.alt = 'screenshot do projeto'
 
-            res.map((e, i) => {
-                if (i < 16) {
-                    let descricao = e.description
-                    let nome = e.name
-                    let screenshot = null
-                    let url = e.html_url
-        
-                    screenshot = `https://raw.githubusercontent.com/Victor-Eduardo-art/${nome}/master/screenshots/screenshot.png`
-                    
-                    const projeto = document.createElement('a')
-                    const span = document.createElement('span')
-                    const ctr_foto = document.createElement('div')
-                    const foto = document.createElement('img')
-                    
-                    projeto.href = url
-                    span.innerHTML = descricao   
-                    foto.src = screenshot
-                    foto.alt = 'screenshot do projeto'
+                ctr_foto.appendChild(foto)
 
-                    ctr_foto.appendChild(foto)
+                projeto.classList.add('projeto')
+                ctr_foto.classList.add('screenshot')
 
-                    projeto.classList.add('projeto')
-                    ctr_foto.classList.add('screenshot')
-                    projeto.id = `projeto-${i}`
+                projeto.appendChild(span)
+                projeto.appendChild(ctr_foto)
+                root.appendChild(projeto)
 
-
-                    projeto.appendChild(span)
-                    projeto.appendChild(ctr_foto)
-                    root.appendChild(projeto)
+                if (projetos.length == res.length -1) {
+                    configBotoes()
                 }
             })
-        })
-    } else {
-        console.log('em criação..')
-    }
+        }
+    })
 }
 
 function configBotoes () {
-    const botoes = document.querySelectorAll('.ctr-botoes a')
+    const projeto = document.querySelectorAll('.projeto')
+    const ctr_botoes = document.querySelector('.ctr-botoes')
 
-    for (let i = 0; i < botoes.length; i++) {
-        botoes[i].addEventListener('click', () => {
-            for (let a = 0; a < botoes.length; a++) {
-                botoes[a].classList.remove('ativo')
+    for (let i = 0; i < projeto.length; i++) {
+        projeto[i].id = `projeto-${i}`
+    }
+
+    for (let i = 0; i < projeto.length; i = i + 4) {
+        const botao = document.createElement('a')
+        botao.href = `#projeto-${i+1}`
+
+        ctr_botoes.appendChild(botao)
+
+        console.log(botao)
+
+        botao.addEventListener('click', () => {
+            for (let a = 0; a < document.querySelectorAll('.ctr-botoes a').length; a++) {
+                document.querySelectorAll('.ctr-botoes a')[a].classList.remove('ativo')
             }
 
-            botoes[i].classList.add('ativo')
+            botao.classList.add('ativo')
         })
     }
+
+    const botao = document.querySelector('.ctr-botoes a').classList.add('ativo')
 }
 
 function iniciar () {
     configMenu()
 
     if (location.href.indexOf('portfolio') != -1) {
-        getProjects([false])
-        configBotoes()
+        getProjects()
+        
     }
 
 }
