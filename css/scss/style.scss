@@ -656,6 +656,7 @@ footer {
             right: 0;
 
             a {
+                pointer-events: none;
                 font-size: 3rem;
                 margin: 2rem 0;
             }
@@ -671,6 +672,9 @@ footer {
             width: 50vw;
             opacity: 100%;
 
+            a {
+                pointer-events: all;
+            }
         }
 
         .btn-menu {
