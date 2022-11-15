@@ -345,6 +345,7 @@ main h1 {
   text-align: center;
   margin-top: 7.2rem;
   margin-bottom: 6rem;
+  color: #fff;
 }
 main .fundo {
   -webkit-animation-name: "delay-opacity";
@@ -575,6 +576,12 @@ footer span {
   .habilidade .esquerda {
     width: 100% !important;
     margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .habilidade .esquerda p {
+    text-align: center;
   }
   .habilidade .direita {
     width: 100% !important;
@@ -602,7 +609,7 @@ footer span {
     right: 0;
   }
   header nav a {
-    pointer-events: none;
+    display: none;
     font-size: 3rem;
     margin: 2rem 0;
   }
@@ -616,7 +623,7 @@ footer span {
     opacity: 100%;
   }
   header .menu_mobile a {
-    pointer-events: all;
+    display: block;
   }
   header .btn-menu {
     z-index: 99;

@@ -1,3 +1,5 @@
+let chave = false
+
 function configMenu () {
     const btn_menu = document.querySelector('.btn-menu')
     const icone_btn = document.querySelector('.btn-menu .icone')
@@ -6,6 +8,7 @@ function configMenu () {
     const body = document.querySelector('body')
     
     body.appendChild(fundo)
+    btn_menu.id = 'abrir-menu'
 
     btn_menu.addEventListener('click', () => {
         icone_btn.classList.toggle('on')
@@ -13,6 +16,7 @@ function configMenu () {
         menu.classList.toggle('menu_mobile')
         fundo.classList.toggle('fundo_blur')
         body.classList.toggle('fixo')
+        btn_menu.id = 'fechar-menu'
 
     })
 }
@@ -79,10 +83,9 @@ function configBotoes () {
     for (let i = 0; i < projeto.length; i = i + 4) {
         const botao = document.createElement('a')
         botao.href = `#projeto-${i+1}`
+        botao.id = 'botão-mostrar-mais-projetos'
 
         ctr_botoes.appendChild(botao)
-
-        console.log(botao)
 
         botao.addEventListener('click', () => {
             for (let a = 0; a < document.querySelectorAll('.ctr-botoes a').length; a++) {
@@ -90,19 +93,60 @@ function configBotoes () {
             }
 
             botao.classList.add('ativo')
+            botao.id = 'botão-ativado'
         })
     }
 
     const botao = document.querySelector('.ctr-botoes a').classList.add('ativo')
 }
 
+function calcTmp (elemento, delay, classe, elementoPai, tmpExec) {
+    const tmp = setInterval(() => {
+       if (chave === false) {
+          efeitoDit(elemento, delay, classe, elementoPai, tmpExec)
+          clearInterval(tmp)
+       }
+    }, 100)
+ }
+
+function efeitoDit (elemento, delay, classe, elementoPai, tmpExec) {  
+   chave = true
+   const arrayTexto = elemento.innerHTML.split("")
+
+   elemento.innerHTML = ''
+
+
+   let tmp = setTimeout(() => {
+      let pos = 0
+
+      let tmp2 = setInterval(() => {
+          if (elemento.innerHTML.length != arrayTexto.length) {
+            elemento.innerHTML = elemento.innerHTML + arrayTexto[pos]
+            pos++
+         }else {
+            if (classe != null) {
+                elemento.classList.add(classe)
+            }
+            
+            clearInterval(tmp2)
+            chave = false
+         }
+      }, delay)
+   }, tmpExec)
+}
+
 function iniciar () {
     configMenu()
 
+    if (location.href.indexOf('index') != -1) {
+        const sobre = document.querySelector("main p")
+        calcTmp(sobre, 50, null, sobre.parentNode, 1)
+    }
+
     if (location.href.indexOf('portfolio') != -1) {
         getProjects()
-        
     }
+
 
 }
 
